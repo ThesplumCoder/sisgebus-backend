@@ -8,9 +8,16 @@ package models;
  * @author ThesplumCoder.
  * @version 1.0.
  */
-public class Card extends models.Entity {
+public class Card extends UseMethod {
 
-  public Card(Integer id) {
-    super(id);
+  /**
+   * Incializa una tarjeta del STM.
+   *
+   * @throws NullPointerException Si ocurre una excepción en el constructor de
+   *                              UseMethod.
+   */
+  public Card() throws NullPointerException {
+    super();
+    changeType();
   }
 }

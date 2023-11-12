@@ -10,15 +10,36 @@ package models;
 public abstract class Place extends Entity {
   private String address;
 
-  protected Place(Integer id, String address) throws IllegalArgumentException {
-    super(id);
+  /**
+   * Inicializa un lugar con la dirección.
+   *
+   * @param address Dirección que tiene el lugar.
+   * @throws NullPointerException     Si ocurre una excepción en el constructor de
+   *                                  Entity.
+   * @throws IllegalArgumentException Si occurre una excepción en la asignación de
+   *                                  dirección.
+   */
+  protected Place(String address) throws NullPointerException, IllegalArgumentException {
+    super();
     setAddress(address);
   }
 
+  /**
+   * Regresa el valor de la dirección.
+   *
+   * @return Dirección en formato de texto.
+   */
   protected String getAddress() {
     return this.address;
   }
 
+  /**
+   * Cambia el valor de la dirección.
+   *
+   * @param address Nueva dirección en formato texto.
+   * @throws IllegalArgumentException Si la dirección está en blanco o contiene
+   *                                  solo espacios.
+   */
   protected void setAddress(String address) throws IllegalArgumentException {
     if (address.isBlank()) {
       String errMsg = "The address can't be empty.";
