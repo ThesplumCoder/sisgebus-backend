@@ -56,7 +56,7 @@ public class CodeQR extends UseMethod {
     LocalTime actualTime = LocalTime.now();
     Duration interval = Duration.between(time, actualTime);
 
-    if (interval.toHours() >= 1) {
+    if (interval.toHours() >= WAIT_TIME.toHours()) {
       return false;
     }
     return true;

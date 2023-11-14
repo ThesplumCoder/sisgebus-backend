@@ -11,7 +11,7 @@ package models;
  */
 public class BusStand extends Place {
 
-  public BusStand(Integer id, String address) {
-    super(id, address);
+  public BusStand(String address) {
+    super(address);
   }
 }

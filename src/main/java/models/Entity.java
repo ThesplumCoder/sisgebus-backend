@@ -39,7 +39,7 @@ public abstract class Entity {
    * @param id Nuevo número para el identificador.
    * @throws NullPointerException Si el identificador pasado apunta a nulo.
    */
-  private void setId(UUID id) throws NullPointerException {
+  protected void setId(UUID id) throws NullPointerException {
     if (!(id.equals(null))) {
       this.id = id;
     } else {

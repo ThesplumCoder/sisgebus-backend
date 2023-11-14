@@ -39,18 +39,16 @@ public abstract class NamedEntity extends Entity {
    * @throws NullPointerException     Si el valor pasado como nombre apunta a
    *                                  nulo.
    * @throws IllegalArgumentException Si el texto para el nombre está vacío o solo
-   *                                  contiene espacions en blanco.
+   *                                  contiene espacios en blanco.
    */
   protected void setName(String name) throws NullPointerException, IllegalArgumentException {
-    if (!(name.equals(null))) {
-      if (name.isBlank()) {
-        String errMsg = "The name can't be empty.";
-        throw new IllegalArgumentException(errMsg);
-      }
-      this.name = name;
-    } else {
-      String errMsg = "The supplied name is null.";
-      throw new NullPointerException(errMsg);
+    if (name.equals(null)) {
+      throw new NullPointerException("The supplied name is null.");
     }
+    if (name.isBlank()) {
+      throw new IllegalArgumentException("The name can't be empty.");
+    }
+
+    this.name = name;
   }
 }

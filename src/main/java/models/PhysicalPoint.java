@@ -13,7 +13,7 @@ package models;
  */
 public class PhysicalPoint extends Place {
 
-  public PhysicalPoint(Integer id, String address) {
-    super(id, address);
+  public PhysicalPoint(String address) {
+    super(address);
   }
 }
