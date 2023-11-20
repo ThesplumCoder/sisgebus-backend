@@ -4,7 +4,7 @@ package models;
  * UseMethod es el modelo que permite abstraer todos los métodos de uso que
  * puede utilizar un pasajero para acceder a un bus o a las estaciones del STM.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public abstract class UseMethod extends Entity {

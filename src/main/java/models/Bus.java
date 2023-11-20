@@ -8,14 +8,14 @@ import java.util.NoSuchElementException;
  * Bus modela los autobuses que soportan la operación de transporte de personas
  * en el STM.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public class Bus extends Entity {
 
   private String licensePlate;
   private String type;
-  private List<String> adjustments;
+  private List<String> helps;
 
   /**
    * Crea un bus que tiene identificador, placa de tránsito, y tipo; pero no
@@ -38,22 +38,22 @@ public class Bus extends Entity {
    *
    * @param licensePlate Placa de tránsito.
    * @param type         Tipo del bus.
-   * @param adjustments  Soportes o ayudas para gente con discapacidad.
+   * @param helps        Soportes o ayudas para gente con discapacidad.
    * @throws IllegalArgumentException Si ocurrió un error en la asignación de
    *                                  atributos.
    * @throws NullPointerException     Si ocurrió un error en la asignación de
    *                                  atributos o en el constructor de Entity.
    */
-  public Bus(String licensePlate, String type, List<String> adjustments)
+  public Bus(String licensePlate, String type, List<String> helps)
       throws IllegalArgumentException, NullPointerException {
     super();
     setLicensePlate(licensePlate);
     setType(type);
 
-    if (adjustments.equals(null)) {
-      this.adjustments = new ArrayList<>();
+    if (helps == null) {
+      this.helps = new ArrayList<>();
     } else {
-      setAdjustments(adjustments);
+      setHelps(helps);
     }
   }
 
@@ -80,8 +80,8 @@ public class Bus extends Entity {
    *
    * @return Lista de cadenas, cada una es una ayuda que posee el bus.
    */
-  public List<String> getAdjustments() {
-    return adjustments;
+  public List<String> getHelps() {
+    return helps;
   }
 
   /**
@@ -94,7 +94,7 @@ public class Bus extends Entity {
    *                                  nulo.
    */
   public void setLicensePlate(String licensePlate) throws IllegalArgumentException, NullPointerException {
-    if (licensePlate.equals(null)) {
+    if (licensePlate == null) {
       throw new NullPointerException("The supplied license plate is null.");
     }
     if (licensePlate.isBlank()) {
@@ -129,56 +129,56 @@ public class Bus extends Entity {
   /**
    * Cambia la lista de ayudas que tiene el autobus.
    *
-   * @param adjustments Una lista con las nuevas ayudas que posee el bus, cada una
-   *                    como un texto.
+   * @param helps Una lista con las nuevas ayudas que posee el bus, cada una
+   *              como un texto.
    * @throws NullPointerException Si la lista apunta a un valor nulo.
    */
-  public void setAdjustments(List<String> adjustments) throws NullPointerException {
-    if (adjustments.equals(null)) {
+  public void setHelps(List<String> helps) throws NullPointerException {
+    if (helps == null) {
       throw new NullPointerException("The supplied adjustments is null.");
     }
 
-    this.adjustments = new ArrayList<String>(adjustments);
+    this.helps = new ArrayList<String>(helps);
   }
 
   /**
    * Agrega una ayuda para gente discapacitada.
    *
-   * @param adjustment Nueva ayuda que se agregó.
+   * @param help Nueva ayuda que se agregó.
    * @throws IllegalArgumentException Si la ayuda a agregar es una cadena vacía o
    *                                  de solo espacios.
    * @throws NullPointerException     Si la ayuda a agregar es un valor nulo.
    */
-  public void addAdjustments(String adjustment) throws IllegalArgumentException, NullPointerException {
-    if (licensePlate.equals(null)) {
-      throw new NullPointerException("The supplied license plate is null.");
+  public void addHelp(String help) throws IllegalArgumentException, NullPointerException {
+    if (help == null) {
+      throw new NullPointerException("The supplied help is null.");
     }
-    if (licensePlate.isBlank()) {
-      throw new IllegalArgumentException("The license plate can't be empty.");
+    if (help.isBlank()) {
+      throw new IllegalArgumentException("The help can't be empty.");
     }
 
-    adjustments.add(adjustment);
+    helps.add(help);
   }
 
   /**
    * Elimina una de las ayudas que posea el autobus.
    *
-   * @param adjustment Ayuda que se desea eliminar.
+   * @param help Ayuda que se desea eliminar.
    * @throws IllegalArgumentException Si la ayuda a eliminar es una cadena vacía o
    *                                  de solo espacios.
    * @throws NoSuchElementException   Si la ayuda a eliminar no existe en la lista
    *                                  actual de ayudas.
    * @throws NullPointerException     Si la ayuda a eliminar es un valor nulo.
    */
-  public void rmAdjustment(String adjustment)
+  public void rmHelp(String help)
       throws IllegalArgumentException, NoSuchElementException, NullPointerException {
-    if (adjustment.equals(null)) {
+    if (help == null) {
       throw new NullPointerException("The supplied help is null.");
     }
-    if (adjustment.isBlank()) {
+    if (help.isBlank()) {
       throw new IllegalArgumentException("The help can't be empty.");
     }
-    if (!(adjustments.remove(adjustment))) {
+    if (!(helps.remove(help))) {
       throw new NoSuchElementException("The help doesn't exist.");
     }
   }

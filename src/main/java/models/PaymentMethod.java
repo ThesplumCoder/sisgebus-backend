@@ -4,7 +4,7 @@ package models;
  * PaymentMethod modela cada uno de los métodos de pago que soporta el sistema
  * para la compra de pasajes de bus.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public class PaymentMethod extends NamedEntity {

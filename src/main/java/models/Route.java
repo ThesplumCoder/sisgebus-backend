@@ -8,8 +8,8 @@ import java.util.NoSuchElementException;
 /**
  * Route modelas las rutas de autobus que recorren los buses del sistema.
  *
- * @author ThesplumCoder.
- * @version 1.0.
+ * @author Anderson Acuña (ThesplumCoder).
+ * @version 1.0
  */
 public class Route extends NamedEntity {
   private List<Bus> buses;
@@ -22,7 +22,12 @@ public class Route extends NamedEntity {
   public Route(String name, List<BusStand> busStands, List<Bus> buses) {
     super(name);
     setBusStands(busStands);
-    setBuses(buses);
+
+    if (buses == null) {
+      this.buses = new ArrayList<>();
+    } else {
+      setBuses(buses);
+    }
   }
 
   /**
@@ -50,7 +55,7 @@ public class Route extends NamedEntity {
    * @throws NullPointerException Si la lista de autobuses apunta a un valor nulo.
    */
   public void setBuses(List<Bus> buses) throws NullPointerException {
-    if (buses.equals(null)) {
+    if (buses == null) {
       throw new NullPointerException("The supplied list of buses is null.");
     }
 
@@ -64,8 +69,8 @@ public class Route extends NamedEntity {
    * @throws NullPointerException Si la lista de paradas de autobus apunta a un
    *                              valor nulo.
    */
-  public void setBusStands(List<BusStand> busStands) {
-    if (busStands.equals(null)) {
+  public void setBusStands(List<BusStand> busStands) throws NullPointerException {
+    if (busStands == null) {
       throw new NullPointerException("The supplied list of bus stands is null.");
     }
 
@@ -79,11 +84,11 @@ public class Route extends NamedEntity {
    * @throws NullPointerException Si el autobus pasada apunta a un valor nulo.
    */
   public void addBus(Bus bus) throws NullPointerException {
-    if (bus.equals(null)) {
+    if (bus == null) {
       throw new NullPointerException("The supplied bus is null.");
     }
 
-    this.buses.add(bus);
+    buses.add(bus);
   }
 
   /**
@@ -95,7 +100,7 @@ public class Route extends NamedEntity {
    * @throws NullPointerException   Si el autobus a eliminar es un valor nulo.
    */
   public void rmBus(Bus bus) throws NoSuchElementException, NullPointerException {
-    if (bus.equals(null)) {
+    if (bus == null) {
       throw new NullPointerException("The supplied bus is null.");
     }
     if (!(buses.remove(bus))) {

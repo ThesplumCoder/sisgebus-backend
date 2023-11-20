@@ -8,7 +8,7 @@ import exceptions.NotEnoughTickets;
  * Esta clase permite identificar a cada usuario, y le permite realizar
  * operaciones de gestión de su transporte.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public class Passenger extends NamedEntity {

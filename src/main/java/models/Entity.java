@@ -40,11 +40,10 @@ public abstract class Entity {
    * @throws NullPointerException Si el identificador pasado apunta a nulo.
    */
   protected void setId(UUID id) throws NullPointerException {
-    if (!(id.equals(null))) {
-      this.id = id;
-    } else {
+    if (id == null) {
       throw new NullPointerException("The supplied identifier is null.");
     }
+    this.id = id;
   }
 
   /**

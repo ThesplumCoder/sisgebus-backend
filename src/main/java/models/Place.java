@@ -40,10 +40,12 @@ public abstract class Place extends Entity {
    * @throws IllegalArgumentException Si la dirección está en blanco o contiene
    *                                  solo espacios.
    */
-  protected void setAddress(String address) throws IllegalArgumentException {
+  protected void setAddress(String address) throws IllegalArgumentException, NullPointerException {
+    if (address == null) {
+      throw new NullPointerException("The address can't be null.");
+    }
     if (address.isBlank()) {
-      String errMsg = "The address can't be empty.";
-      throw new IllegalArgumentException(errMsg);
+      throw new IllegalArgumentException("The address can't be empty.");
     }
     this.address = address;
   }

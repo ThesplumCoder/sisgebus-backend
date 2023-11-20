@@ -42,7 +42,7 @@ public abstract class NamedEntity extends Entity {
    *                                  contiene espacios en blanco.
    */
   protected void setName(String name) throws NullPointerException, IllegalArgumentException {
-    if (name.equals(null)) {
+    if (name == null) {
       throw new NullPointerException("The supplied name is null.");
     }
     if (name.isBlank()) {
