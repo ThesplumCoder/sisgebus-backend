@@ -36,16 +36,16 @@ public class Factory {
 
     List<String> helps = new ArrayList<>();
     helps.add("Silla de Ruedas");
-    buses.add(new Bus("001-AAA", "Alimentador", helps));
-    buses.add(new Bus("002-AAA", "Alimentador", helps));
-    buses.add(new Bus("003-AAA", "Alimentador", helps));
-    buses.add(new Bus("004-AAA", "Pre-troncal", helps));
-    buses.add(new Bus("005-AAA", "Pre-troncal", helps));
-    buses.add(new Bus("006-AAA", "Pre-troncal", helps));
-    buses.add(new Bus("007-AAA", "Troncal", helps));
-    buses.add(new Bus("008-AAA", "Troncal", helps));
-    buses.add(new Bus("009-AAA", "Troncal", helps));
-    buses.add(new Bus("010-AAA", "Troncal", helps));
+    buses.add(new Bus("001-AAA", null, "Alimentador", helps));
+    buses.add(new Bus("002-AAA", null, "Alimentador", helps));
+    buses.add(new Bus("003-AAA", null, "Alimentador", helps));
+    buses.add(new Bus("004-AAA", null, "Pre-troncal", helps));
+    buses.add(new Bus("005-AAA", null, "Pre-troncal", helps));
+    buses.add(new Bus("006-AAA", null, "Pre-troncal", helps));
+    buses.add(new Bus("007-AAA", null, "Troncal", helps));
+    buses.add(new Bus("008-AAA", null, "Troncal", helps));
+    buses.add(new Bus("009-AAA", null, "Troncal", helps));
+    buses.add(new Bus("010-AAA", null, "Troncal", helps));
 
     busStands.add(new BusStand("Carrera 27 Calle 50"));
     busStands.add(new BusStand("Carrera 27 Calle 45"));
