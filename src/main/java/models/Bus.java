@@ -28,11 +28,11 @@ public class Bus extends Entity {
    * cuenta inicialmente con ayudas para gente con discapacidad.
    *
    * @param licensePlate Placa de tránsito.
-   * @param type Tipo del bus.
+   * @param type         Tipo del bus.
    * @throws IllegalArgumentException Si ocurrió un error en la asignación de
-   * atributos.
-   * @throws NullPointerException Si ocurrió un error en la asignación de
-   * atributos o en el constructor de Entity.
+   *                                  atributos.
+   * @throws NullPointerException     Si ocurrió un error en la asignación de
+   *                                  atributos o en el constructor de Entity.
    */
   public Bus(String licensePlate, String type) throws IllegalArgumentException, NullPointerException {
     this(licensePlate, null, type, null);
@@ -43,20 +43,20 @@ public class Bus extends Entity {
    * gente con discapacidad.
    *
    * @param licensePlate Placa de tránsito.
-   * @param location Última parada visitada por el autobus.
-   * @param type Tipo del bus.
-   * @param helps Soportes o ayudas para gente con discapacidad.
+   * @param location     Última parada visitada por el autobus.
+   * @param type         Tipo del bus.
+   * @param helps        Soportes o ayudas para gente con discapacidad.
    * @throws IllegalArgumentException Si ocurrió un error en la asignación de
-   * atributos.
-   * @throws NullPointerException Si ocurrió un error en la asignación de
-   * atributos o en el constructor de Entity.
+   *                                  atributos.
+   * @throws NullPointerException     Si ocurrió un error en la asignación de
+   *                                  atributos o en el constructor de Entity.
    */
   public Bus(String licensePlate, BusStand location, String type, List<String> helps)
-          throws IllegalArgumentException, NullPointerException {
+      throws IllegalArgumentException, NullPointerException {
     super();
     setLicensePlate(licensePlate);
     setType(type);
-    
+
     if (location == null) {
       this.location = new BusStand("Parqueadero");
     } else {
@@ -111,9 +111,9 @@ public class Bus extends Entity {
    *
    * @param licensePlate Nueva placa de tránsito.
    * @throws IllegalArgumentException Si la placa de tránsito está vacía o solo
-   * contiene espacios en blanco.
-   * @throws NullPointerException Si la placa de tránsito apunta a un valor
-   * nulo.
+   *                                  contiene espacios en blanco.
+   * @throws NullPointerException     Si la placa de tránsito apunta a un valor
+   *                                  nulo.
    */
   public void setLicensePlate(String licensePlate) throws IllegalArgumentException, NullPointerException {
     if (licensePlate == null) {
@@ -133,7 +133,7 @@ public class Bus extends Entity {
    *
    * @param type Nuevo tipo del bus.
    * @throws IllegalArgumentException Si el tipo ingresado no corresponde con
-   * alguno de los valores posibles.
+   *                                  alguno de los valores posibles.
    */
   public void setType(String type) throws IllegalArgumentException {
     List<String> types = new ArrayList<>(3);
@@ -153,7 +153,7 @@ public class Bus extends Entity {
    *
    * @param busStand Última parada de autobus en la que estuvo el autobus.
    * @throws NullPointerException Si el objeto de parada de autobus pasado es un
-   * valor nulo.
+   *                              valor nulo.
    */
   public void setLocation(BusStand busStand) throws NullPointerException {
     if (busStand == null) {
@@ -167,7 +167,7 @@ public class Bus extends Entity {
    * Cambia la lista de ayudas que tiene el autobus.
    *
    * @param helps Una lista con las nuevas ayudas que posee el bus, cada una
-   * como un texto.
+   *              como un texto.
    * @throws NullPointerException Si la lista apunta a un valor nulo.
    */
   public void setHelps(List<String> helps) throws NullPointerException {
@@ -183,8 +183,8 @@ public class Bus extends Entity {
    *
    * @param help Nueva ayuda que se agregó.
    * @throws IllegalArgumentException Si la ayuda a agregar es una cadena vacía
-   * o de solo espacios.
-   * @throws NullPointerException Si la ayuda a agregar es un valor nulo.
+   *                                  o de solo espacios.
+   * @throws NullPointerException     Si la ayuda a agregar es un valor nulo.
    */
   public void addHelp(String help) throws IllegalArgumentException, NullPointerException {
     if (help == null) {
@@ -202,13 +202,13 @@ public class Bus extends Entity {
    *
    * @param help Ayuda que se desea eliminar.
    * @throws IllegalArgumentException Si la ayuda a eliminar es una cadena vacía
-   * o de solo espacios.
-   * @throws NoSuchElementException Si la ayuda a eliminar no existe en la lista
-   * actual de ayudas.
-   * @throws NullPointerException Si la ayuda a eliminar es un valor nulo.
+   *                                  o de solo espacios.
+   * @throws NoSuchElementException   Si la ayuda a eliminar no existe en la lista
+   *                                  actual de ayudas.
+   * @throws NullPointerException     Si la ayuda a eliminar es un valor nulo.
    */
   public void rmHelp(String help)
-          throws IllegalArgumentException, NoSuchElementException, NullPointerException {
+      throws IllegalArgumentException, NoSuchElementException, NullPointerException {
     if (help == null) {
       throw new NullPointerException("The supplied help is null.");
     }
