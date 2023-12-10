@@ -6,7 +6,7 @@
   <artifactId>sisgebus-backend</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>sisgebus-backend Maven Webapp</name>
+  <name>Sisgebus Backend Maven Webapp</name>
   <url>https://github.com/ThesplumCoder/sisgebus-backend</url>
 
   <properties>

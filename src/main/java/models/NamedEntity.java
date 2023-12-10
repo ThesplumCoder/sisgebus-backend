@@ -13,13 +13,14 @@ public abstract class NamedEntity extends Entity {
   /**
    * Inicializa el objeto con el identificador y un nombre.
    *
+   * @param id   Identificador numérico autogenerado por la BD.
    * @param name Nombre que se le quiere dar al objeto.
    * @throws NullPointerException     Si ocurrió un error con el método setName()
    *                                  o en los constructores de las superclases.
    * @throws IllegalArgumentException Si ocurrió un error con el método setName().
    */
-  protected NamedEntity(String name) throws NullPointerException, IllegalArgumentException {
-    super();
+  protected NamedEntity(Integer id, String name) throws NullPointerException, IllegalArgumentException {
+    super(id);
     setName(name);
   }
 

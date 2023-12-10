@@ -1,8 +1,8 @@
 package models;
 
 /**
- * UseMethod es el modelo que permite abstraer todos los métodos de uso que
- * puede utilizar un pasajero para acceder a un bus o a las estaciones del STM.
+ * Modelo que permite abstraer todos los métodos de uso que puede utilizar un
+ * pasajero para acceder a un bus o a las estaciones del STM.
  *
  * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
@@ -10,43 +10,40 @@ package models;
 public abstract class UseMethod extends Entity {
 
   /**
-   * Define el tipo del que es el método de uso. Solo hay dos posibilidades:
-   * Digital, que se codifica con "Digital"; y físico, que se codifica con
-   * "Physical".
+   * Define el tipo del que es el método de uso.
    */
-  private String type;
+  private UseMethodType type;
 
   /**
-   * Inicializa el método de uso asumiendo que es de tipo digital.
+   * Crea un método de uso. Por defecto es de tipo digital.
    *
+   * @param id Identificador numérico autogenerado por la BD.
    * @throws NullPointerException Si ocurre una excepción en el constructor de
    *                              Entity.
    */
-  public UseMethod() throws NullPointerException {
-    super();
-    type = "Digital";
+  public UseMethod(Integer id) throws NullPointerException {
+    super(id);
+    setType(UseMethodType.DIGITAL);
   }
 
   /**
    * Retorna el tipo que es el método de uso.
    *
-   * @return Tipo del método de uso en texto.
+   * @return Constante de la enumeración que representa el tipo.
    */
-  protected String getType() {
+  protected UseMethodType getType() {
     return type;
   }
 
   /**
-   * Cambia el tipo del método de uso.
+   * Cambia el tipo del que es el método de uso.
    *
-   * Si el tipo del método de uso está en "Digital" se alterna a "Physical", y
-   * viceversa.
+   * @param type Nuevo tipo para el método de uso.
    */
-  protected void changeType() {
-    if (type.equals("Digital")) {
-      type = "Physical";
-    } else {
-      type = "Digital";
+  protected void setType(UseMethodType type) {
+    if (type == null) {
+      throw new NullPointerException("The type can't be null.");
     }
+    this.type = type;
   }
 }

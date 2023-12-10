@@ -25,7 +25,7 @@ public class BusData extends CrudOperation {
    * a manejar es la del cliente.
    */
   public BusData() throws CrudOperationException {
-    super("client");
+    super("bus");
   }
 
   /**
@@ -48,7 +48,7 @@ public class BusData extends CrudOperation {
         while (rs.next()) {
           id = rs.getString("id");
           licensePlate = rs.getString("license_plate");
-          type = rs.getString("telephone_number");
+          type = rs.getString("type");
           c = new Client(id, name, telephoneNumber);
           clients.add(c);
         }

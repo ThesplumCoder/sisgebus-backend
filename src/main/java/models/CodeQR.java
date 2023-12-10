@@ -6,7 +6,7 @@ import java.time.LocalTime;
 /**
  * CodeQR nos permite representar el código QR que nos permite acceder al STM.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public class CodeQR extends UseMethod {
@@ -26,11 +26,12 @@ public class CodeQR extends UseMethod {
   /**
    * Crea un código QR tomando el momento del día.
    *
+   * @param id Identificador numérico autogenerado por la BD.
    * @throws NullPointerException Si ocurre una excepción en el constructor de
    *                              UseMethod.
    */
-  public CodeQR() throws NullPointerException {
-    super();
+  public CodeQR(Integer id) throws NullPointerException {
+    super(id);
     time = LocalTime.now();
   }
 

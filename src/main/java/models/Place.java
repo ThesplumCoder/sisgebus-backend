@@ -4,7 +4,7 @@ package models;
  * Esta clase es la abstracción base para todos los elementos que podemos ubicar
  * por medio de una dirección.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public abstract class Place extends Entity {
@@ -13,14 +13,15 @@ public abstract class Place extends Entity {
   /**
    * Inicializa un lugar con la dirección.
    *
+   * @param id      Identificador numérico autogenerado por la BD.
    * @param address Dirección que tiene el lugar.
    * @throws NullPointerException     Si ocurre una excepción en el constructor de
    *                                  Entity.
    * @throws IllegalArgumentException Si occurre una excepción en la asignación de
    *                                  dirección.
    */
-  protected Place(String address) throws NullPointerException, IllegalArgumentException {
-    super();
+  protected Place(Integer id, String address) throws NullPointerException, IllegalArgumentException {
+    super(id);
     setAddress(address);
   }
 

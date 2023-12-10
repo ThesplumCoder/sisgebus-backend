@@ -1,36 +1,33 @@
 package models;
 
-import java.util.UUID;
-
 /**
  * Esta clase es la abstracción base para todos los elementos de la aplicación.
  *
  * Su responsabilidad es de proveer a todos los elementos el atributo de "id"
  * que permite identificar a cada instancia para cada clase.
  *
- * @author ThesplumCoder.
+ * @author Anderson Acuña (ThesplumCoder).
  * @version 1.0.
  */
 public abstract class Entity {
-  private UUID id;
+  private Integer id;
 
   /**
    * Inicializa el objeto con el identificador.
    *
-   * @throws NullPointerException Si occurrió un error en el método setId().
+   * @param id Identificador numérico autogenerado por la BD.
    */
-  protected Entity() throws NullPointerException {
-    setId(generateId());
+  protected Entity(Integer id) {
+    setId(id);
   }
 
   /**
    * Regresa el valor del identificador.
    *
-   * @return Número del UUID almacenado como identificador, convertido en una
-   *         cadena de texto.
+   * @return Número del identificador generado por BD.
    */
-  protected String getId() {
-    return id.toString();
+  protected Integer getId() {
+    return id;
   }
 
   /**
@@ -39,26 +36,10 @@ public abstract class Entity {
    * @param id Nuevo número para el identificador.
    * @throws NullPointerException Si el identificador pasado apunta a nulo.
    */
-  protected void setId(UUID id) throws NullPointerException {
+  protected void setId(Integer id) throws NullPointerException {
     if (id == null) {
       throw new NullPointerException("The supplied identifier is null.");
     }
     this.id = id;
-  }
-
-  /**
-   * Genera un identificador válido para la entidad.
-   *
-   * @return Objeto UUID que se puede utilizar como identificador.
-   */
-  private UUID generateId() {
-    return UUID.randomUUID();
-  }
-
-  /**
-   * Cambia el identificador utilizando internamente la generación de otro UUID.
-   */
-  protected void changeId() {
-    setId(generateId());
   }
 }
